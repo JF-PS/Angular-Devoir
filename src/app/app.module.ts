@@ -3,14 +3,31 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GameHeaderComponent } from './game-header/game-header.component';
+import { GameFooterComponent } from './game-footer/game-footer.component';
+import { UserFighterComponent } from './user-fighter/user-fighter.component';
+import { RingBackgroundComponent } from './ring-background/ring-background.component';
+import { MenuComponent } from './menu/menu.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BattleFightComponent } from './battle-fight/battle-fight.component';
+import { GameSceneComponent } from './game-scene/game-scene.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GameHeaderComponent,
+    GameFooterComponent,
+    UserFighterComponent,
+    RingBackgroundComponent,
+    MenuComponent,
+    BattleFightComponent,
+    GameSceneComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
