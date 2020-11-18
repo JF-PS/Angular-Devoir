@@ -1,14 +1,43 @@
-<app-game-scene></app-game-scene>
+<br>
+<br>
+<br>
+<br>
 
-<button (click)="onFightStarted()">HELP!!!!!!!!!!!!!</button>
-<br>
-<br>
-<br>
-<br>
-<!-- <span>
-    <img src="{{selectedFighter.picture}}" alt="Avatar" style="width:50px;border-radius: 50%;"> {{selectedFighter.firstName}} {{selectedFighter.lastName}}
-</span> 
-<br>
-<span>
-    <img src="{{ordiFighter.picture}}" alt="Avatar" style="width:50px;border-radius: 50%;"> {{ordiFighter.firstName}} {{ordiFighter.lastName}}
-</span>  -->
+<div class="containerGameStat">
+    <div class="cartouchePlayer" id="ordi">
+            <img class="imgAvatar" src="{{ordiFighter.picture}}" alt="Avatar" >[Ordi Fighter] {{ordiFighter.firstName | uppercase}} {{ordiFighter.lastName | uppercase}} 
+    </div>
+
+    <div>
+        <audio id="audioFight" controls src="./assets/song/fightBattle.mp3" autoplay loop></audio>
+    </div>
+    
+    <div class="cartouchePlayer" id="player">
+        {{selectedFighter.firstName | uppercase}} {{selectedFighter.lastName | uppercase}} [Your Player] <img class="imgAvatar" src="{{selectedFighter.picture}}" alt="Avatar" >
+    </div>
+</div>
+
+<div class="containerGameStat">
+    <div class="life"> 
+        <div id="life_inside_ordi">{{ordiFighter.life}}%</div>
+    </div>
+
+    <span id="commentaire">{{actionOrdi}}</span>
+
+    <div class="life"> 
+        <div id="life_inside_player">{{selectedFighter.life}}%</div>
+    </div>
+</div>
+
+
+<div id="actionPlayer">
+    <div class="actionPlayer">
+        <button (click)="onPunch(1)">Punch [ordi -20 hp]</button>
+    </div>
+    <div class="actionPlayer">
+        <button (click)="onKick(1)">Kick [ordi -30 hp]</button>
+    </div>
+    <div class="actionPlayer">
+        <button (click)="onHeal(1)">Heal [you +10 hp]</button>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<br>
+<br>
+
+<h1 *ngIf="winnerIsPlayer">Congratulations you won!</h1>
+<h1 *ngIf="!winnerIsPlayer">Sorry you Lost!</h1>
+
+<div id="containerStat">
+    <div class="userFighter">
+        <label *ngIf="!winnerIsPlayer" class="looser">Looser</label>
+        <label *ngIf="winnerIsPlayer" class="winner">Winner</label><br>
+        <img src="{{playerFighter.picture}}" alt=""><br>
+        <label>{{playerFighter.firstName}} {{playerFighter.lastName}}</label><br>
+        <label>HP : {{playerFighter.life}}</label>
+    </div>
+    <div class="userFighter">
+        <label *ngIf="!winnerIsPlayer" class="winner">Winner</label>
+        <label *ngIf="winnerIsPlayer" class="looser">Looser</label><br>
+        <img src="{{ordiFighter.picture}}" alt=""><br>
+        <label>{{ordiFighter.firstName}} {{ordiFighter.lastName}}</label><br>
+        <label>HP : {{ordiFighter.life}}</label>
+    </div>
+</div>
+
+<h2>Your Fight Time : {{TotalpartiTime}} minutes.</h2>
+<div id="buttonNavigation">
+    <button  (click)="gotoBattle(playerFighter)">New Fight</button>
+    <button routerLink="/user-fighter">Change User</button>
+    <button routerLink="/menu">Quite</button>
+</div>
+
+
+
+
+
+

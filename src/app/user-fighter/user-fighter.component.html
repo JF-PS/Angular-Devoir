@@ -1,19 +1,19 @@
-
 <div id="conteneur">
     <div>
         <h1>{{title | uppercase}}</h1>
     </div>
-    <div>
-        <ul class="heroes">
-            <li *ngFor="let user of usersFghter">
-                <span>
-                    <img src="{{user.picture}}" alt="Avatar" style="width:50px;border-radius: 50%;"> {{user.firstName}} {{user.lastName}}
-                    <!-- <a class="btn btn-warning" routerLink="/detail/{{user.id}}/{{user.gender}}/{{user.firstName}}/{{user.lastName}}/{{user.picture}}">Choose</a> -->
-                    <!-- <a class="btn btn-warning" [routerLink]="['/battle-fight',{fighter: user}]">Choose</a> -->
-                    <button (click)="gotoDynamic(user)" >Choose</button>
-                </span> 
-              
-            </li>
-        </ul>
+
+    <div class="userCartouche" *ngFor="let user of usersFghter">
+            <img src="{{user.picture}}" alt="Avatar"> 
+            <span>{{user.firstName}}</span> 
+            <span>{{user.lastName}}</span>
+            <span>{{user.gender}}</span>
+            <span>{{user.life}}</span>
+            <button class="chooseUserButton" (click)="gotoBattle(user)" >Choose</button>
     </div>
 </div>
+<div id="goBackButton">
+    <button (click)="goBack()">go back</button>
+    <button (click)="recupUserFromApi()">Refresh</button>
+</div>
+

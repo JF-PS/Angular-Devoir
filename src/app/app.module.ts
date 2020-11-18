@@ -11,6 +11,7 @@ import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BattleFightComponent } from './battle-fight/battle-fight.component';
 import { GameSceneComponent } from './game-scene/game-scene.component';
+import { StatBattleComponent } from './stat-battle/stat-battle.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { GameSceneComponent } from './game-scene/game-scene.component';
     MenuComponent,
     BattleFightComponent,
     GameSceneComponent,
+    StatBattleComponent,
   ],
   imports: [
     BrowserModule,
